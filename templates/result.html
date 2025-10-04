@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="result-page">
+    <div class="content-box">
+        <h2>Power Consumption Analysis</h2>
+
+        {% if result is not none %}
+            <p>Global active power is: {{ "%.2f"|format(result) }} </p>
+        {% elif error %}
+            <p style="color: red;">Error: {{ error }}</p>
+        {% else %}
+            <p>No result available.</p>
+        {% endif %}
+
+        <a href="/">Go Back</a>
+        
+    </div>
+</body>
+</html>

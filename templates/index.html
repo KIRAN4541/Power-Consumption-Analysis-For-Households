@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Power Consumption Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>🔌 Power Consumption Prediction</h2>
+
+        <!-- Image on the left -->
+        <div class="image-container">
+            <img src="{{ url_for('static',filename='meter.JPG') }}" alt="Power Meter Image">
+        </div>
+
+        <!-- Stylish Form on the right -->
+        <form action="/predict" method="POST" class="glow-form">
+            <div class="form-group">
+                <label for="grp">Global Reactive Power</label>
+                <input type="text" id="grp" name="Global_reactive_power" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gi">Global Intensity</label>
+                <input type="text" id="gi" name="Global_intensity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sm1">Sub Metering 1</label>
+                <input type="text" id="sm1" name="Sub_metering_1" required>
+            </div>
+
+            <div class="form-group">
+               <label for="sm2">Sub Metering 2</label>
+               <input type="text" id="sm2" name="Sub_metering_2" required>
+            </div>
+
+            <div class="form-group">
+               <label for="sm3">Sub Metering 3</label>
+               <input type="text" id="sm3" name="Sub_metering_3" required>
+            </div>
+
+           <button type="submit">🚀 Predict Now</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
